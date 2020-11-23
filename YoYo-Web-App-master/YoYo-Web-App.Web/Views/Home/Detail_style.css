@@ -1,0 +1,33 @@
+﻿body {
+}
+.btn-circle.btn-xl {
+    width: 100px;
+    height: 100px;
+    padding: 10px 16px;
+    border-radius: 55px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-curve.btn-xl {
+    border-radius: 10px;
+    text-align: center;
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+    vertical-align: central;
+}
+
+.navbar .nav > li > a.dropdown-toggle {
+    position: relative;
+    bottom: -1px;
+    z-index: 1005;
+    background: white;
+    padding-bottom: 12px;
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu {
+    /* ... */
+    border-top: 1px solid #000;
+}

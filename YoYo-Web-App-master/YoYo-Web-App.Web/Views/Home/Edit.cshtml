@@ -1,0 +1,88 @@
+﻿
+@model YoYoWebApp.Data.Models.Athlete
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/LayoutApp.cshtml";
+}
+
+<link rel=“stylesheet” href=“Edit_style.css”>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3" style="text-align: center; align-content: center; background-color:black ;align-items: center">
+                        <div class="container" style="text-align:center;align-content:center">
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="text-align:center ;color:white">YoYo-Web-App</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+
+
+
+                <h1>Edit</h1>
+                <hr />
+
+                
+
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <form id="form" asp-controller="Home" asp-action="Edit" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="AthleteId" class="control-label" hidden="True"></label>
+                                <input asp-for="AthleteId" id="ai" class="form-control" hidden="True"/>
+                                <span asp-validation-for="AthleteId" class="text-danger"hidden="True"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" id="name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Level" class="control-label"></label>
+                                <input asp-for="Level" id="level" name="level" class="form-control" />
+                                <span asp-validation-for="Level" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ShuttleLevel" class="control-label"></label>
+                                <input asp-for="ShuttleLevel" id="shuttleLevel" name="shuttleLevel" class="form-control" />
+                                <span asp-validation-for="ShuttleLevel" class="text-danger"></span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="text-align:right">
+                        <br />
+                        <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col" style="text-align:right">
+                        <br />
+                        <div>
+                            <a asp-action="Details">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function save() {
+        
+        window.location.href = 'http://localhost:5000/Home/Edit/' + document.getElementById('ai').value + '?level=' + document.getElementById('level').value + '&shuttleLevel=' + document.getElementById('shuttleLevel').value;
+
+    }
+    
+</script>
